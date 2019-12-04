@@ -34,24 +34,26 @@ class car
   void Forward(int s)
   {
     PVector dir = new PVector(cos(angle), sin(angle));
-    dir.setMag(dir,s);
+    dir.normalize();
+    dir.mult(s);
     pos.add(dir);
   }
 
   void Backward(int s)
   {
     PVector dir = new PVector(-cos(angle), -sin(angle));
+    dir.normalize();
     dir.mult(s);
     pos.add(dir);
   }
 
   void Left()
   {
-    angle += PI/80;
+    angle += PI/70;
   }
 
   void Right()
   {
-    angle -= PI/80;
+    angle -= PI/70;
   }
 }
